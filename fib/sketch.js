@@ -46,7 +46,7 @@ function fibHeight(n) {
 
 function findPos(n) {
     for (var j = n; j >= 1; j--) {
-        i = j; while (i>4) i-=4
+        var i = j; while (i>4) i-=4;
         if (j==n) {
             eval('var pos = ['+(i==4?'0, 0':
                                 i==3?'fibWidth(n), 0':
