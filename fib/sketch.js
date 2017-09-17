@@ -8,7 +8,7 @@ var h = w;
 var num = 0;
 var nfib = 0;
 
-function setup() {
+function draw() {
     createCanvas(windowWidth, windowHeight-5);
     background(180);
     strokeWeight(2);
