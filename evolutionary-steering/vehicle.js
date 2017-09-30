@@ -123,6 +123,11 @@ Vehicle.prototype.dead = function() {
 // Draw a triangle rotated in the direction of velocity
 Vehicle.prototype.display = function(isBest) {
 
+  let dna_food_attract = this.dna[0]*20;
+  let dna_poison_attract = this.dna[1]*20;
+  let dna_food_percept = this.dna[2]*2;
+  let dna_poison_percept = this.dna[3]*2;
+    
   let theta = this.velocity.heading() + PI/2;
   let rd = color(255, 0, 0);
   let grn = color(0, 255, 0);
@@ -151,11 +156,6 @@ Vehicle.prototype.display = function(isBest) {
   endShape(CLOSE);
 
   if (debug.checked()) {
-    let dna_food_attract = this.dna[0]*20;
-    let dna_poison_attract = this.dna[1]*20;
-    let dna_food_percept = this.dna[2]*2;
-    let dna_poison_percept = this.dna[3]*2;
-    
     dna_food_percept = dna_food_percept<0? 0 : dna_food_percept;
     dna_poison_percept = dna_poison_percept<0? 0 : dna_poison_percept;
     
