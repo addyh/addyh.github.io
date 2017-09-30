@@ -120,14 +120,13 @@ label:hover {
 }
 button {
   margin-top: 2px;
-  background-color: red;
   width: 200px;
   height: 40px;
   cursor: pointer;
   font-size: 8pt;
   font-family: Verdana;
   border: 1px solid white;
-  color: white; /* Add a text color */
+  color: white;
 }
 button:active {
   border: 1px dotted white;
