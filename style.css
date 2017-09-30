@@ -88,10 +88,10 @@ ul {
   padding-left: 40px;
 }
 
-li.project {
+li {
   margin: 10px;
 }
-li.ref {
+li.first {
   list-style-image: none;
   list-style: none;
   list-style-type: none;
