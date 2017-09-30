@@ -135,8 +135,8 @@ button:active {
 }
 .success:hover {background-color: #4CAF50;} /* Green */
 .success {background-color: #46a049;}
-.info {background-color: #2196F3;} /* Blue */
-.info:hover {background: #0b7dda;}
+.info:hover {background-color: #2196F3;} /* Blue */
+.info {background: #0b7dda;}
 .warning:hover {background-color: #ff9800;} /* Orange */
 .warning {background: #e68a00;}
 .danger:hover {background-color: #f44336;} /* Red */
