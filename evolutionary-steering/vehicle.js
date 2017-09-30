@@ -173,9 +173,9 @@ Vehicle.prototype.display = function(isBest) {
   if (isBest) {
     noStroke();
     fill(0, 255, 0, 20);
-    ellipse(0, 0, this.dna[2]*2);
+    ellipse(0, 0, dna_food_percept);
     fill(255, 0, 0, 20);
-    ellipse(0, 0, this.dna[3]*2);
+    ellipse(0, 0, dna_poison_percept);
   }
 
   pop();
