@@ -126,6 +126,7 @@ Vehicle.prototype.display = function(isBest) {
   let theta = this.velocity.heading() + PI/2;
   let rd = color(255, 0, 0);
   let grn = color(0, 255, 0);
+  let purp = color(255, 0, 255);
   let deadColor = isBest?color(0):rd;
   let aliveColor = isBest?color(255):grn;
   let col = lerpColor(deadColor, aliveColor, this.health);
@@ -150,15 +151,23 @@ Vehicle.prototype.display = function(isBest) {
   endShape(CLOSE);
 
   if (debug.checked()) {
-      stroke(grn);
-      strokeWeight(1);
-      line(-1, -1, -1, -this.dna[0]*20);
-      noFill();
-      ellipse(0, 0, this.dna[2]*2);
-      stroke(rd);
-      strokeWeight(1);
-      line(1, 1, 1, -this.dna[1]*20);
-      ellipse(0, 0, this.dna[3]*2);
+    let dna_food_attract = this.dna[0]*20;
+    let dna_poison_attract = this.dna[1]*20;
+    let dna_food_percept = this.dna[2]*2;
+    let dna_poison_percept = this.dna[3]*2;
+    
+    dna_food_percept = dna_food_percept<0? 0 : dna_food_percept;
+    dna_poison_percept = dna_poison_percept<0? 0 : dna_poison_percept;
+    
+    stroke(grn);
+    strokeWeight(1);
+    line(-1, -1, -1, -dna_food_attract);
+    noFill();
+    ellipse(0, 0, dna_food_percept);
+    stroke(rd);
+    strokeWeight(1);
+    line(1, 1, 1, -dna_poison_attract);
+    ellipse(0, 0, dna_poison_percept);
   }
 
   if (isBest) {
