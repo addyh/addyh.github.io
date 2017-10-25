@@ -38,8 +38,54 @@ function Board() {
 
     this.matrix = empty;
 
+    this.deleteRow = function(row) {
+
+        // set current row vals to 0
+        for (let i = 0; i < this.matrix[row].length; i++) {
+            this.matrix[row][i].value = 0;
+        }
+
+        // go through each row
+        for (let j=row-1; j>=0; j--) {
+          	for (let i=0; i<this.matrix[j].length; i++) {
+
+                // move each column's element down by one
+				this.matrix[j+1][i] = this.matrix[j][i];
+            }
+        }
+    }
+
+	// checks if any rows are full
+    this.checkIfRowsFull = function() {
+
+        // go through each row
+        for (var j=0; j<this.matrix.length; j++) {
+
+            // go through each column
+            for (var i=0; i<this.matrix[j].length; i++) {
+
+                if (this.matrix[j][i].value == 0) {
+                  	break;
+                }
+                // we are at the last column, all values are 1
+              	else if (i == this.matrix[j].length-1) {
+                  	// delete row j
+                    this.deleteRow(j);
+                    this.checkIfRowsFull();
+                    return;
+                }
+            }
+        }
+
+      return;
+
+    }
+
     // add a new piece to the board
     this.addPiece = function(piece) {
+
+      this.checkIfRowsFull();
+
         // go through every element in the piece (4x4)
         for (var j=0; j<piece.matrix.length; j++) {
             for (var i=0; i<piece.matrix[j].length; i++) {
