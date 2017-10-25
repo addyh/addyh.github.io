@@ -2,7 +2,7 @@
 var gridSize = 25;
 
 // how many blocks wide/high is the grid
-var gridWidth = 25;
+var gridWidth = 12;
 var gridHeight = 25;
 
 var piece;
