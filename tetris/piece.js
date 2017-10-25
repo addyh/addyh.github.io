@@ -444,6 +444,8 @@ function Piece(board) {
                 var value = this.matrix[j][i];
 
                 if (value == 1 &&
+                  this.board.matrix[j+this.pos.y+1] &&
+                  this.board.matrix[j+this.pos.y+1][i+this.pos.x] &&
                     this.board.matrix[j+this.pos.y+1][i+this.pos.x].value == 1) {
                     return false;
                 }
