@@ -1,4 +1,5 @@
-function arraysEqual(a,b) {
+
+    function arraysEqual(a,b) {
     /*
         Array-aware equality checker:
         Returns whether arguments a and b are == to each other;
@@ -18,6 +19,8 @@ function arraysEqual(a,b) {
     }
 }
 
+// cp() - takes in a copy of the matrix rotated
+// returns the rotated version
 function cp (copy) {
 
 // I /////////////////////////////////
@@ -369,6 +372,10 @@ function Piece(board) {
         if (this.farBottom() == this.board.lowerLimit || this.canGoDown() == false) {
             // wait (dropInterval) milliseconds
             if (this.board.dropCounter >= this.board.dropInterval) {
+
+                // this is where we delete a completed row
+                this.board.checkIfRowsFull();
+
                 // this is where lower() will stop being called by the main piece
                 this.atBottom = true;
                 this.board.addPiece(this);

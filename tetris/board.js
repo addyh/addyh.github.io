@@ -50,7 +50,8 @@ function Board() {
           	for (let i=0; i<this.matrix[j].length; i++) {
 
                 // move each column's element down by one
-				this.matrix[j+1][i] = this.matrix[j][i];
+				this.matrix[j+1][i].value = this.matrix[j][i].value;
+                this.matrix[j+1][i].pos.y = this.matrix[j][i].pos.y;
             }
         }
     }
@@ -83,8 +84,6 @@ function Board() {
 
     // add a new piece to the board
     this.addPiece = function(piece) {
-
-      this.checkIfRowsFull();
 
         // go through every element in the piece (4x4)
         for (var j=0; j<piece.matrix.length; j++) {
