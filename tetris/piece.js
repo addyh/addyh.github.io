@@ -307,7 +307,7 @@ function Piece(board) {
     // the position of the piece's top-left corner, not yet scaled by gridSize
     // so every 1 position, translates to X gridSize in (this.draw())
                                      // (POS) * (GRIDSIZE) = PIXEL
-    this.pos = {x: 11, y: 0};       // ****** UNITARY ******
+    this.pos = {x: 4, y: 0};       // ****** UNITARY ******
     this.color = {r: random(0,200), g: random(0,200), b: random(0,200)};
     this.matrix = this.makeMatrix();
     this.atBottom = false;
