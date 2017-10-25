@@ -449,6 +449,11 @@ function Piece(board) {
                     this.board.matrix[j+this.pos.y+1][i+this.pos.x].value == 1) {
                     return false;
                 }
+                else if (!this.board.matrix[j+this.pos.y+1]) {
+                    return true;
+                } else if (!this.board.matrix[j+this.pos.y+1][i+this.pos.x]) {
+                    return true;
+                }
             }
         }
         return true;
