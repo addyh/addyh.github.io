@@ -26,6 +26,9 @@ table.regex-testing td {
 #output {
   padding: 20px 50px;
 }
+#replacement-textarea {
+  height: 150px;
+}
 textarea {
   width: 100%;
 }

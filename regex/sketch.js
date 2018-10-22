@@ -38,9 +38,12 @@ function loadVals(doingReplace) {
   if (doingReplace) {
     replacement = select('#replacement').value();
   } else {
+  /*
     toggleReplacement(false);
     select('#replacement').value('');
+  */
   }
+
 }
 
 function doTest() {
@@ -101,6 +104,7 @@ function doSplit() {
   output.html('<ul>' + result + '</ul>');
 }
 
+/*
 function toggleReplacement(show) {
   $('#show-replace').css('display', show?'block':'none');
 }
@@ -108,21 +112,25 @@ function toggleReplacement(show) {
 function replacementShown() {
   return ($('#show-replace').css('display') == 'none'?false:true);
 }
+*/
 
 function doReplace() {
   loadVals(true);
+  output.html('<textarea id="replacement-textarea">' + input.replace(regex, replacement) + '</textarea>');
 
+/*
   if (replacementShown()) {
     $('#show-replace').css('color', '');
     $('#show-replace').css('font-weight', '');
     $('#replacement').css('border-color', '');
-    output.html('<ul>' + input.replace(regex, replacement) + '</ul>');
+    output.html('<textarea id="replacement-textarea">' + input.replace(regex, replacement) + '</textarea>');
   } else {
     toggleReplacement(true);
     $('#show-replace').css('color', 'red');
     $('#show-replace').css('font-weight', 'bold');
     $('#replacement').css('border-color', 'red');
   }
+*/
 }
 
 function practice() {
