@@ -1,12 +1,12 @@
-var regex;
-var input;
-var output;
-var test;
-var match;
-var exec;
-var _global;
-var _case;
-var flags;
+let regex;
+let input;
+let output;
+let test;
+let match;
+let exec;
+let _global;
+let _case;
+let flags;
 
 function setup() {
 
@@ -45,22 +45,22 @@ function loadVals(doingReplace) {
 
 function doTest() {
   loadVals();
-  output.html(("<ul>"+regex.test(input)+"</ul>").toUpperCase());
+  output.html(('<ul>'+regex.test(input)+'</ul>').toUpperCase());
 }
 
 function doMatch() {
   loadVals();
   let matches = input.match(regex);
-  let result = "<ul>";
+  let result = '<ul>';
 
   if (matches && !(matches.length == 1 && matches[0] == '')) {
     for (let i = 0; i < matches.length; i++) {
-      result += "<li>" + matches[i] + "</li>";
+      result += '<li>' + matches[i] + '</li>';
     }
   } else {
-    result += "NO MATCHES";
+    result += 'NO MATCHES';
   }
-  result += "</ul>";
+  result += '</ul>';
   output.html(result);
 }
 
@@ -68,22 +68,22 @@ function doExec() {
   loadVals();
   let res;
   let result = '';
-  output.html(" ");
+  output.html(' ');
 
   if (_global) {
     while (res = regex.exec(input)) {
-      output.html(output.html() + "<li>" + res + "</li>");
+      output.html(output.html() + '<li>' + res + '</li>');
     }
     result = output.html();
   } else {
-    result = "<li>" + regex.exec(input) + "</li>";
+    result = '<li>' + regex.exec(input) + '</li>';
   }
 
-  if (result == "" || result == " " || result == null) {
-    result = "NO RESULT";
+  if (result == '' || result == ' ' || result == null) {
+    result = 'NO RESULT';
   }
 
-  output.html("<ul>" + result + "</ul>");
+  output.html('<ul>' + result + '</ul>');
 }
 
 function doSplit() {
@@ -93,12 +93,12 @@ function doSplit() {
 
   if (reg) {
     for (let i = 0; i < reg.length; i++) {
-      result += "<li>" + reg[i] + "</li>";
+      result += '<li>' + reg[i] + '</li>';
     }
   } else {
-    result = "NO RESULT";
+    result = 'NO RESULT';
   }
-  output.html("<ul>" + result + "</ul>");
+  output.html('<ul>' + result + '</ul>');
 }
 
 function toggleReplacement(show) {
@@ -116,7 +116,7 @@ function doReplace() {
     $('#show-replace').css('color', '');
     $('#show-replace').css('font-weight', '');
     $('#replacement').css('border-color', '');
-    output.html("<ul>" + input.replace(regex, replacement) + "</ul>");
+    output.html('<ul>' + input.replace(regex, replacement) + '</ul>');
   } else {
     toggleReplacement(true);
     $('#show-replace').css('color', 'red');
@@ -152,13 +152,13 @@ function practice() {
   // ----- test() ----- r.test(s) -----------------------------------------
   // ======================================================================
   r = /\d{3}/;
-  r.test("hello");  // false
-  r.test("123");    // true
-  r.test("123abc"); // true
+  r.test('hello');  // false
+  r.test('123');    // true
+  r.test('123abc'); // true
 
   r = /^\d{3}$/;
-  r.test("123");    // true
-  r.test("123abc"); // false
+  r.test('123');    // true
+  r.test('123abc'); // false
 
   // ======================================================================
   // ----- match() ----- s.match(r) ---------------------------------------
@@ -189,18 +189,18 @@ function practice() {
   // ======================================================================
   // ----- split() ----- s.split(r) ---------------------------------------
   // ======================================================================
-  s = "unicorns and rainbows, and cupcakes";
+  s = 'unicorns and rainbows, and cupcakes';
   s.split(/[,\s]+/); // ["unicorns", "and", "rainbows", "and", "cupcakes"]
 
 
   // ======================================================================
   // ----- replace() ----- s.replace(r, cb) -------------------------------
   // ======================================================================
-  s = "unicorns and rainbows and cupcakes";
+  s = 'unicorns and rainbows and cupcakes';
   s.replace(/\w{8}/,  'kittens'); // "kittens and rainbows and cupcakes"
   s.replace(/\w{8}/g, 'kittens'); // "kittens and kittens and kittens"
 
-  s = "hello";
+  s = 'hello';
   s.replace(/(o)/, '$1-$1-$1$1$1'); // "hello-o-ooo"
 
   function replaceFunc(match, group1, group2) {
@@ -215,6 +215,6 @@ function practice() {
     // etc...
   }
 
-  s = "unicorns and rainbows and cupcakes";
+  s = 'unicorns and rainbows and cupcakes';
   s.replace(/\w{8}/g, replaceFunc); // "jellybeans and cats and cats"
 }
