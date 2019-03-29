@@ -39,3 +39,11 @@ a.src {
 a.src:hover {
   text-decoration: underline;
 }
+
+a.email-link {
+  
+}
+
+p.cover-letter {
+  padding-top: 30px;
+} 
