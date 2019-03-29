@@ -1,5 +1,6 @@
 body {
   margin: 25px;
+  font-size: 12pt;
 }
 
 h1 {
@@ -41,7 +42,7 @@ a.src:hover {
 }
 
 a.email-link {
-  
+  font-size: 12pt;
 }
 
 p.cover-letter {
